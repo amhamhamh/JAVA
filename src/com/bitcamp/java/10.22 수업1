@@ -1,0 +1,66 @@
+package com.bitcamp.java;
+
+//if(p100 == p10) {result : true;} // 관계연산자 : 크기 비교. 왼쪽 기준으로 얘기함. 
+//if(p100 == p10) {result : true;}
+//if(p10 == p1) {result : true;} 
+				
+public class Ex02 {
+	/**
+	 * 3자리 정수 생성하여 출력하라.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int ran = generate(); // 호출 값을 정하고 함수를 생성해라.
+		// 자바는 항상 자료형 및 논리형 등을 먼저 선언한 다음 시작할 것.
+
+		// 반환받은 ran 변수의 값이 3자리인가?
+		// 추가요구사항 : 중복 없어야 한다.
+		boolean result = isDuplicated(ran);//
+		// 조건이 있고, 판단에 따라 실행이 따르다...
+		// 분기문 : if-else(조건), switch-case(값)
+		if (result) {
+			System.out.println("3자리 정수 : X");
+			// 조건식이 true일 때 사용할 식 : 중복있다.
+		} else {
+			System.out.println("3자리 정수 : " + ran);
+			// 조건식이 false일 때 사용할 식 : 중복없다.
+		}
+	}
+
+	private static boolean isDuplicated(int n) {
+		// TODO : 3자리 정수를 전달받아 각 자리의 중복 확인
+		boolean result = false;
+		int p100 = n/100;
+		int p10= (n/10)&10;
+		int p1 = n&10;
+		// 논리연산자  "조건식이 여러개 일 때" : &&(and) ,||(or)- 논리 조합
+		if((p100 == p10) ||// 관계연산자 : 크기 비교. 왼쪽 기준으로 얘기함. 
+		   (p100 == p1)  ||
+		    (p10 == p1)
+				){
+			result = true;
+		}
+		
+		
+		
+		return result;
+	}
+
+	private static int generate() {
+		// TODO 3자리 임의 정수 생성 100~999
+		int num = 0;
+		int min = 100;
+		int max = 999;
+		// num = 123; 난수 생성
+		double random_float = (Math.random() * 100000);
+		random_float = random_float % (max + 1);// limit max(수의 나머지가 1000을 넘지 않도록 뱉어라.)
+		random_float = random_float % (min); // limit min(만약 난수 0이 나왔을 경우 100을 넣으면 101이 됨)
+		System.out.println(random_float); // ASCIII코드를 사용하여 임의 비밀번호 생성하는 코드
+		num = (int)random_float;//일시적 형변환
+		num = (int)Math.round(random_float);//일시적 형변환
+		System.out.println(random_float);
+		return num;
+	}
+
+}
