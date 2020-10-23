@@ -1,0 +1,145 @@
+package com.bitcamp.java;
+
+import java.util.Scanner; // util까지 package - Scanner는 class  or *는 모든 class를 다 가져옴.
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+/**
+ * 
+ * @author AI-04 콘솔환경, 게시판 게시글.[] 글번호, 글제목, 내용, 작성자 [int][String ] 사용자.[] 번호,
+ *         이름, 아이디, 암호
+ *         
+ *         여러 함수들이 공통 사용할 변수들?
+ *         - 지역, 전역, 정적 변수들의 구분
+ */
+public class BoardMain {
+	static Scanner kb; 
+	static boolean loggin = false;
+	static String userName = null; // type을 string으로 표현을 할 때, 항상 null로 표현할 것. -NullPointException(에러)
+	
+	/**
+	 * 실행 절차 : 키모드로 입력, 모니터 출력(어디, 무엇)
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		kb = new Scanner(System.in); //키보드의 입력 값 변환 class는 Scanner kb를 새로 할당 → instance화(실체화)
+		System.out.println("앱시작");
+		// 초기화
+		final int UEXIT = 0; // 상수(변하지 않는 값)으로 설정, 상수는 대문자로 설정 
+		int cmd = 0;		// 사용자의 입력값.		
+		
+		
+		while(true) {//증감식(조건식) 없으면 무한으로 돌아감.
+		// 게시글 목록
+			list(); //
+			System.out.println(
+					"[1]write[2]view[3]join[4]login[5]logout[0]Exit"
+					);
+		// 선택(이벤트)에 따라 실행한다...(event handler에 따른 코딩)
+			cmd = kb.nextInt(); kb.nextLine();// ex)1,2,엔터 중 12만 뽑고 엔터는 남음. nextline으로 버림.   
+			// kb에 대한 정의가 없기 때문에 설정이 됨. 
+			if(cmd == UEXIT) {// 사용자(cmd)가 종료(UEXIT)를 선택했을 때
+			break;   //while문에서 조건식이 없으면 그냥 break 할 것.
+			}
+		// 실행 결과 출력
+			switch(cmd) { //괄호 안에 상수 값이 들어감. ex) case 3실행시에 3과 4 실행. case 1이면 1~4까지 실행. 즉, 시작 값을 찍는 거 
+			case 0://상수값 1개만, 변수 또는 식 불가
+			case 1:
+				// 글쓰기, 로긴을 해야 한다...
+				if(loggin) {
+				registContent(userName);
+				}else {
+					System.out.println("Please login"); // 사용자에게 선택사항을 줘라.로그인을 할지 안할지
+				}
+				break;							 
+			case 2:
+				// 하나의 글을 선택해서 상세 보기 화면
+				int no = 0;
+				if(0<=no && no<=9) {// 들어오는 데이터는 무조건 검사해야 함.
+					viewContent(no);//수정(글을 식별할 수 있는 값), 삭제	
+				}else {
+					System.out.println("invalid no");			
+				} 
+				break;
+			case 3:
+				join();
+				break;
+			case 4:
+				System.out.println("ID :");
+				String id = kb.nextLine();
+				System.out.println("PW :");
+				String pw = kb.nextLine();				
+				//String id =""; // type 클래스인 경우, 스트링 경우  ""은 공간이 있다. , null→"" 상태를 확인해야 함.(문자열 검증 필수)  
+				//String pw =null;// type 클래스인 경우, null은 공간 자체가 없다. 								
+				login(id, pw);
+				break;
+			case 5:		
+				logout();
+				break;				
+			default://1~4 해당 값이 없는 것은 처리방법.
+				System.out.println("1");
+			}
+		}//end loop
+		
+		// 해제, 정리..
+		System.out.println("앱종료");
+	}// main end
+
+	private static void logout() {
+		// TODO Auto-generated method stub
+		loggin = false;
+		userName = null;
+	}
+
+	private static void login(String id, String pw) {
+		// TODO : 전달받은 값이 일치하는지 확인
+		// 가져오기
+		// 비교&& ||
+		//"jang".equals(id);
+		// id.equals("jang");
+//		id.contains("j");// 부분문자열 포함 확인
+		loggin = true;		
+		
+		
+	}
+
+	private static void join() {
+		// TODO : 사용자 등록
+		System.out.println("Name :");
+		String name = kb.nextLine();
+		System.out.println("ID :");
+		String id = kb.nextLine();
+		System.out.println("PW :");
+		String pw = kb.nextLine();
+		
+	}
+
+	private static void viewContent(int no) {
+		// TODO : 게시글 보기- 수정, 삭제
+		// 가져오기		
+		// 출력하기
+		String s = "";		
+		System.out.println();
+		
+	}
+
+	private static void registContent(String userName) {
+		// TODO : 게시글 1개를 입력받아 저장(등록)
+		// 글번호 : 자동 증가
+		System.out.println("Title :");
+		String title = kb.nextLine(); // 엔터치는 기준으로 라인을 가져옴. next(); 경우는 단어 단위로 끊어서 가져옴.
+		System.out.println("Memo :");
+		String text = kb.nextLine(); // 엔터치는 기준으로 라인을 가져옴. next(); 경우는 단어 단위로 끊어서 가져옴.
+		// 등록
+		
+	}
+
+	private static void list() {
+		// TODO: 게시글 목록 출력, 번호, 제목, 작성자
+		for(int i =0;i<10;++i) {
+			String str = "["+i+"]\t";
+			System.out.println(str);
+		}		
+	}
+}
