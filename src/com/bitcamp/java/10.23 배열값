@@ -1,0 +1,51 @@
+package com.bitcamp.java;
+
+/**
+ * 배열[]
+ * - 자료형이 같은 여러 개의 변수들 담는 구조.
+ * - 요소 : 번호(정수)로 구분
+ * [0]시작 [길이-1]까지...양수
+ * - 길이(개수) : 최대 길이는 고정, 현재 길이는 변한다...
+ * 
+ * 
+ * 자료형 새로 만들어야 한다... 클래스형
+ * @author AI-04
+ *
+ */
+public class Ex04 {
+
+	static final int ARRAY_MAX =10; // overflow 되지 않도록 변수를 설정을 해줘라. 
+									// 변수를 설정할 때 상수를 설정하지 마라. 
+	public static void main(String[] args) {
+		int[] ar; // 배열형의 정보를 저장하는 변수 ar. int 4byte 크기(요소형)
+		ar =  new int[ARRAY_MAX]; // ar 새로운 배열을 생성. int=4이고 10개의 배열을 만든다.
+		
+		for(int i=0; i<ar.length; ++i) {	// for문(해당 구간을 고를 수 있음)
+			System.out.print(i+"-"+ar[i]); // 요소형을 불러내주겠다.(요소명) 
+		}	
+		System.out.println();
+		//추가
+		int sp = -1;
+		++sp;
+		ar[sp] = 1;
+		++sp;
+		ar[sp] = 2;
+		// sp : 마지막 추가 번호, sp+1 : 저장된 갯수 
+		
+//		int mp = 0;
+//		++mp;
+//		ar[mp] = 1;
+//		++mp;
+//		ar[mp] = 2;
+//		++mp;		
+//		// mp : 추가할 번호, mp : 저장된 갯수
+		
+		for(int i : ar) {				// for its문(전부 다 불러냈다)
+			System.out.print(i); // 요소형을 불러내주겠다.(요소명) 
+		}
+		System.out.println();
+		 
+
+	}
+
+}
