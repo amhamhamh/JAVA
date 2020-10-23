@@ -27,7 +27,7 @@ public class Ex04 {
 		//추가
 		int sp = -1;
 		++sp;
-		ar[sp] = 1;
+		ar[sp%ar.length] = 1;//이렇게 쓸 경우에는 길이의 나머지 아래 길이로 생산됨. 초과된 메모리를 사용하지 않는다(즉, overflow가 안된다.)
 		++sp;
 		ar[sp] = 2;
 		// sp : 마지막 추가 번호, sp+1 : 저장된 갯수 
