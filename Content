@@ -1,0 +1,28 @@
+package com.bitcamp.java.board;
+
+public class Content { // aquerytool은 데이터베이스 구조 만들어줌
+
+	int cno;
+
+	String title;
+
+	String text;
+
+	String name;
+
+	// 기존에 이미 구현된 함수를 교체(다시 만든다)하는 경우
+	@Override // at notation.(추가적 명령)
+	public String toString() {
+		String s = "Content{[" + cno + "]";
+		s = " title : " + title;
+		s = " text : " + text;
+		s = " name : " + name + "}\n";
+		return s;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
