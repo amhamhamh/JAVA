@@ -1,0 +1,25 @@
+package src1;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Method1 {
+	
+
+	public static void main(String[] args) throws IOException {
+		System.out.println(TwoTimes("a","-"));
+		FileWriter fw = new FileWriter("out.txt");
+		fw.write(TwoTimes("a","*"));
+		fw.close();		
+	}	
+
+	public static String TwoTimes(String text, String delimeter) {
+		String out = "";
+		out = out + delimeter + "\n";
+		out = out + text + "\n";
+		out = out + text + "\n";
+		return out;		
+	}
+	
+
+}
