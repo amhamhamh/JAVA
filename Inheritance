@@ -6,7 +6,8 @@ class Cal{
 	}
 	//overloading 같은 함수를 사용하면서 매개변수를 다르게 할 수 있음. 
 	public int sum(int v1, int v2, int v3) {
-		return v1+v2+v3;
+//		return v1+v2+v3;
+		return this.sum(v1,v2)+v3; // 4번줄의 sum을 받고 + v3를 합쳐서 결과가 나옴. 
 	}
 }
 
@@ -16,7 +17,8 @@ class Cal3 extends Cal{    // 3번줄의 class Cal의 메소드를 상속받음.
 	}
 	public int sum(int v1, int v2) { // 클라스 Cal의 sum을 override(덮어쓰기)함. 
 		System.out.println("Cal3");
-		return v1+v2;
+//		return v1+v2;
+		return super.sum(v1, v2); // 부모인 클라스 Cal의 sum 함수를 상속받음. 
 	}
 	//overloading을 자식이 가지던, 부모가 가지던 상관이 없음 
 		public int sum(int v1, int v2, int v3) {
