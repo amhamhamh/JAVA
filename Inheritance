@@ -1,0 +1,29 @@
+package src1;
+
+class Cal{
+	public int sum(int v1, int v2) {
+		return v1+v2;
+	}
+}
+
+class Cal3 extends Cal{    // 3번줄의 class Cal의 메소드를 상속받음.
+	public int minus(int v1, int v2){	// 클라스 Cal를 수정함. 
+		return v1-v2;
+	}
+	public int sum(int v1, int v2) { // 클라스 Cal의 sum을 override(덮어쓰기)함. 
+		System.out.println("Cal3");
+		return v1+v2;
+	}
+}
+
+
+
+public class InheritancApp {
+	public static void main(String[] args) {
+		Cal3 f1 = new Cal3();				//새롭게 인스턴스화 하여.
+		System.out.println(f1.sum(3, 1));	// 24~25번의 출력시킴
+		System.out.println(f1.minus(3, 1));
+
+	}
+
+}
