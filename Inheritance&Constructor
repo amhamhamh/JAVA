@@ -1,0 +1,25 @@
+package src1;
+
+class Cal{
+    int v1,v2;
+    Cal(int v1, int v2){
+        System.out.println("Cal init!!"); //★(실행순서 1)
+        this.v1 = v1; this.v2 = v2;  		// 매개변수 v1은 this.v1을 전달받고, int v1을 가리킴 & 매개변수 v2은 this.v2을 전달받고, int v2을 가리킴
+    }
+    public int sum(){return this.v1+v2;} 	// 메소드 sum은 7번줄과 마찬가지로 v1과 v2를 v1+v2를 합친 값을 뱉어냄  ★(실행순서 3)
+}
+class Cal3 extends Cal{
+    Cal3(int v1, int v2) {					// 부모클라스의 Cal의 생성자를 상속받을 때 Cal3안의 생성자를 만들어야 함. 
+        super(v1, v2);						// 부모클라스의 Cal의 인스턴스 int v1, v2를 받음.
+        System.out.println("Cal3 init!!");	// 이것은 부모클라스 Cal에 대한 overriding임. ★(실행순서 2)
+    }
+    public int minus(){return this.v1-v2;} // 추가적으로 부모클라스의 Cal의 인스턴스 int v1, v2 상속 받아 계산함. ★(실행순서 4)
+}
+public class InheritanceApp {
+    public static void main(String[] args) {
+//        Cal c = new Cal(2,1);
+        Cal3 c3 = new Cal3(2, 1);
+        System.out.println(c3.sum()); // 3		
+        System.out.println(c3.minus()); // 1
+    }
+}
