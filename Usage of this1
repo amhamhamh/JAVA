@@ -1,0 +1,25 @@
+package src1;
+
+
+
+class InstanceCopy {   	
+	
+	public String delimiter=  "";
+	public InstanceCopy(String delimiter) { //생성자는 매서드 형태이며, 클라스와 동일한 이름을 가진다. 
+		this.delimiter = delimiter; // 매개변수 delimeter를 받은 9줄은 delimeter = this.delimeter. 
+									//	이는 7번줄의 instance 변수를 가르키는 꼴이다
+	}
+	
+
+	public void A() {
+        System.out.println(delimiter);
+        System.out.println("A");
+        System.out.println("A");
+    }
+ 
+    public void B() {
+        System.out.println(delimiter);
+        System.out.println("B");
+        System.out.println("B");
+    }
+}
