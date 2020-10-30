@@ -1,0 +1,38 @@
+package src1;
+class Foo{ // 
+  
+	public static String classVar = "I class var"; // static는 class 소속
+    public String instanceVar = "I instance var"; //인스턴스
+    public static void classMethod() {		// 이 static은 class 소속
+        System.out.println(classVar); // Ok. class 소속이니 출력가능.
+//      System.out.println(instanceVar); // Error
+    }
+    public void instanceMethod() {			// 인스턴스. 개별화됨.
+        System.out.println(classVar); // Ok  //클라스 소속이라서 가능
+        System.out.println(instanceVar); // Ok // instance 소속이니 출력 가능
+    }
+}
+public class StaticApp {
+ 
+    public static void main(String[] args) {
+        System.out.println(Foo.classVar); // OK  // class 소속이라서 가능 
+//      System.out.println(Foo.instanceVar); // Error
+        Foo.classMethod();
+//      Foo.instanceMethod();
+         
+        Foo f1 = new Foo();   // f1에 새로운 생성자를 만들어서 인스턴스화 
+        Foo f2 = new Foo();  // f2에 새로운 생성자를 만들어서 인스턴스화
+//      
+        System.out.println(f1.classVar); // I class var      //  class 변수이니 출력가능 
+        System.out.println(f1.instanceVar); // I instance var //  class 속의 인스턴스 변수이니 출력가능 
+//      
+        f1.classVar = "changed by f1";
+        System.out.println(Foo.classVar); // changed by f1 // class 변수이니 서로 연결되어 출력가능  
+        System.out.println(f2.classVar);  // changed by f1    class 변수이니 서로 연결되어 출력가능  
+//      
+        f1.instanceVar = "changed by f1";
+        System.out.println(f1.instanceVar); // changed by f1 // f1안의 인스턴스 변수의 값을 변화시켰으니 변경 가능
+        System.out.println(f2.instanceVar); // I instance var //f1과 f2의 인스턴스 변수는 서로 독립되어있으니 변경 불가능 
+    }
+ 
+}
