@@ -4,6 +4,10 @@ class Cal{
 	public int sum(int v1, int v2) {
 		return v1+v2;
 	}
+	//overloading 같은 함수를 사용하면서 매개변수를 다르게 할 수 있음. 
+	public int sum(int v1, int v2, int v3) {
+		return v1+v2+v3;
+	}
 }
 
 class Cal3 extends Cal{    // 3번줄의 class Cal의 메소드를 상속받음.
@@ -14,6 +18,10 @@ class Cal3 extends Cal{    // 3번줄의 class Cal의 메소드를 상속받음.
 		System.out.println("Cal3");
 		return v1+v2;
 	}
+	//overloading을 자식이 가지던, 부모가 가지던 상관이 없음 
+		public int sum(int v1, int v2, int v3) {
+			return v1+v2+v3;
+		}
 }
 
 
@@ -22,6 +30,7 @@ public class InheritancApp {
 	public static void main(String[] args) {
 		Cal3 f1 = new Cal3();				//새롭게 인스턴스화 하여.
 		System.out.println(f1.sum(3, 1));	// 24~25번의 출력시킴
+		System.out.println(f1.sum(3, 1, 1));
 		System.out.println(f1.minus(3, 1));
 
 	}
