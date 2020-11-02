@@ -1,0 +1,122 @@
+
+public class Ex050 {
+/**		 구구단과 비슷하게 어떠한 총규칙을 배열에 담음. 
+		상품 가격 및 품명은 고정으로 놓고, 갯수만 변수로 따로 넣기(scanner) 모듈 사용
+ * 
+ * @param args
+ */
+	// 4가지의 요소를 함수를 배열화 해서 프린트 하기
+	
+	public static String AllProduct() {
+		// TODO Auto-generated method stub
+		
+		String[] p = new String[4];
+		p[0] = "생수";
+		p[1] = "꼬깔콘";
+		p[2] = "커피";
+		p[3] = "아이스크림";		
+		
+		
+		String product = "";
+		for(int i = 0; i<p.length; i++) {			
+			  product = product + p[i]+"\n";			  
+		}
+		return product;
+	}
+	
+	public static String AllMount(){
+		String[] p1 = new String[4];
+		p1[0] = "900";
+		p1[1] = "1200";
+		p1[2] = "300";
+		p1[3] = "2500";
+		
+		String mount = "";
+		for(int j = 0; j<p1.length; j++) {			
+			mount = mount + p1[j]+"\n";
+		}
+		return mount;
+		}
+	
+	public static String AllPrice1(){
+		String[] p2 = new String[4];
+		p2[0] = "900";
+		p2[1] = "1200";
+		p2[2] = "300";
+		p2[3] = "2500";
+		
+		String price = "";
+		for(int k = 0; k<p2.length; k++) {			
+			price = price + p2[k]+"\n";
+		}
+		return price;
+		}
+	
+	
+	
+	public static String AllPrice2(){
+		String[] p3 = new String[4];
+		p3[0] = "900";
+		p3[1] = "1200";
+		p3[2] = "1200";
+		p3[3] = "2500";
+		
+		String allprice = "";
+		for(int l = 0; l<p3.length; l++) {			
+			allprice = allprice + p3[l]+"\n";
+		}
+		return allprice;
+		}
+	
+	public static void main(String[] args) {		
+		
+		//위의 두 가지 함수를 새로운 생성자를 만들어 반복문으로 출력 - 간격을 주고		
+
+		
+		// 위에 꺼를 매개변수로 받아서 배열의 형태로 출력을 한다 or 새로운 생성자를 위의 함수와 동일하게 사용   
+		
+		public static void receipt(String proudct){
+			
+			String[] pay = new String[4];
+					
+			String paybill = "";
+			for(int m = 0; m<pay.length; m++) {
+				paybill += proudct[m];
+			}
+			System.out.println(paybill);			
+		}
+		
+		
+		
+		
+		 
+		
+		
+			
+		
+		
+		
+		
+		
+		
+		
+	
+//		
+//		
+//		int[] amount = new int[4];
+//		amount[0] = 1;
+//		amount[1] = 2;
+//		amount[2] = 4;
+//		amount[3] = 1;
+//		
+//		for(int k = 0; k<amount.length; k++) {			
+//			System.out.println(amount[k]);						
+//		}
+
+			
+}
+
+
+
+
+}
