@@ -1,0 +1,106 @@
+
+public class Ex050 {
+/**		 구구단과 비슷하게 어떠한 총규칙을 배열에 담음. 
+		상품 가격 및 품명은 고정으로 놓고, 갯수만 변수로 따로 넣기(scanner) 모듈 사용
+ * 
+ * @param args
+ */
+	// 4가지의 요소를 함수를 배열화 해서 프린트 하기
+	
+
+	public static void main(String[] args) {		
+		// 변수 아닌 것은 가격, 변수는 갯수
+		int water = 900;
+		int snack = 1200;
+		int coffe = 300;
+		int icecream = 2500;
+		int watercount = 0 ;
+		int snackcount = 0 ;
+		int coffecount = 0 ;
+		int icecreamcount = 0 ;
+		int totalprice = 0;
+		
+	
+		
+		System.out.println("-----------------------------------------------------------------");		
+		
+		String[] list = new String[4];
+		list[0]="상품";
+		list[1]="갯수";
+		list[2]="가격";
+		list[3]="총합";		
+		
+		for(int j = 0; j<list.length; j++) {
+			System.out.print("\t"+list[j]+"\t"+"|");
+		};		
+		
+		//단일 주문이 아니라 누적으로 찍혀야 함. 
+		switch() {
+		
+		}
+		
+		
+		
+		
+//		String[] line1 = new String[4];
+//		line1[0]="생수";
+//		line1[1]="1";	// 갯수는 변수이며
+//		line1[2]="900";
+//		line1[3]="900";	// 총합은 갯수*가격을 출력한다. 	
+//		
+//		for(int i = 0; i<line1.length; i++) {
+//			if(i == 0){
+//				System.out.print("\n"+"\t"+line1[i]+"\t");
+//			}else {
+//			System.out.print("\t"+line1[i]+"\t");	
+//			}
+//		};
+		
+		String[] line2 = new String[4];
+		line2[0]="꼬깔콘";
+		line2[1]="2";
+		line2[2]="1200";
+		line2[3]="2400";		
+		
+		for(int i = 0; i<line2.length; i++) {
+			if(i == 0){
+				System.out.print("\n"+"\t"+line2[i]+"\t");
+			}else {
+			System.out.print("\t"+line2[i]+"\t");
+			}
+		};	
+		
+		String[] line3 = new String[4];
+		line3[0]="커피";
+		line3[1]="4";
+		line3[2]="300";
+		line3[3]="1200";		
+		
+		for(int i = 0; i<line3.length; i++) {
+			if(i == 0){
+				System.out.print("\n"+"\t"+line3[i]+"\t");
+			}else {
+			System.out.print("\t"+line3[i]+"\t");
+			}
+		};
+
+		String[] line4 = new String[4];
+		line4[0]="아이스크림";
+		line4[1]="1";
+		line4[2]="2500";
+		line4[3]="2500";		
+		
+		for(int i = 0; i<line4.length; i++) {
+			if(i == 0){
+				System.out.print("\n"+"\t"+line4[i]+"\t");
+			}else {
+			System.out.print("\t"+line4[i]+"\t");
+			}
+		};
+		System.out.println("\n"+"-----------------------------------------------------------------");
+		System.out.printf("%60s","합계 출력 7000"); // 출력할 때 포맷에 맞추어 출력 왼쪽부터 60만큼 뛰어서 
+		System.out.println("\n"+"-----------------------------------------------------------------");		
+		
+	}
+
+}
