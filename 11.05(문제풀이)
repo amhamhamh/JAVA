@@ -1,0 +1,105 @@
+class Ex20{
+/*
+
+1. 1~10까지 홀수를 출력하시오
+2. 1~10까지 짝수를 출력하시고 그 합을 구합시오.
+3. 다음 출력하시오
+  1+2+3+4+5+6+7+8+9+10
+4. 1~50중 4의 배수를 출력
+5. 다음의 합을 구하시오
+   1/2+2/3+3/4+4/5+.......9999/10000=?
+
+*/
+public static void main(String[] args){
+	
+
+	/*
+	for(int i=1; i<9; i+=2){
+	  System.out.println("홀수:"+i);
+	}
+	//홀수출력
+	
+
+	int sum=0;
+	for(int i=2; i<9; i+=2){
+		sum =sum+i;
+		System.out.println("짝수:"+i);	
+	}
+	System.out.println("합계:"+sum);		
+
+	//짝수 값 출력	
+
+
+
+	
+	int sum1=0;
+	for(int i=1; i<=10; i++){
+		sum1 =sum1+i;
+		System.out.print(i);	
+		if(i==10){
+			System.out.print('='+"\n");	
+		}else{
+			System.out.print('+');	
+		}
+	}
+	System.out.println("1~10의 합:"+sum1);	
+	*/	
+	
+	//1~10 출력
+	
+	
+	
+
+	/*
+	for(int i=1; i<50; i++){
+	  if(i%4==0){
+	    System.out.println(i);	 //정말 직관적인 코드구먼.
+	  }
+	}
+	*/	
+	//1~50에서 4의 배수만 출력
+
+	/*
+	int j=1;
+        boolean k=true;
+	while(k){        
+	    System.out.println(4*j);	 
+	    j++;	
+	    if(4*j>50){
+               k=false;		  //일단 돌린 다음에 특정 조건을 주고 벗어남. 
+              }	
+	}
+	*/
+		/*
+	    boolean k=true;
+	    for(int m=1; k; m++){
+	    if(m*4<=50){
+          	    System.out.println(m*4);	 
+		}else{
+			k = false;}
+	    }	
+	*/
+
+			/*
+  	
+	double sum3=0.0;
+	for(int n=0; n<100000; n++){
+		System.out.println(1.0*n/(n+1));
+		sum3+=1.0*n/(n+1);
+	}
+	System.out.println(sum3);
+	*/
+	
+ 	System.out.println("\n----------------------------------------------\n");
+	double sum5=0;
+	for(int n=1; n<10000; n++){
+	 	sum5+=1-1.0/(n+1);	// 괄호안에 정수 타입을 1.0과 연산을 통해 실수타입으로 변환하게 하고, sum5는 실수 타입으로 변화하게 된다. 
+	}
+	System.out.println(sum5);
+	
+
+
+	// 다음의 합을 구하시오	
+}
+
+}
