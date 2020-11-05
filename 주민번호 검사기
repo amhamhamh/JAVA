@@ -1,0 +1,77 @@
+/*
+주민번호 검사기
+run>java Ex27 880501-1234567
+당신은 올해 00세 남성입니다.
+
+
+
+run>java Ex28 1234561234567
+주민번호 형식에 맞춰 작성하세요(ex)123456-123456)
+
+run>java Ex29 1234561234567
+숫자 아닌 문자를 입력하였습니다. 
+*/
+
+import java.util.Scanner; 
+
+class Ex27{
+
+ public static void main(String[] args){
+      	//나이를 입력하고, 현재년도에서 해당연도를 빼고 1을 더한다.
+	//그리고 그 값을 변수화하여 입력을 한다. 
+	/*
+	Scanner sc = new Scanner(System.in);
+	String str = sc.next();
+ 	char a[]=str.toCharArray();
+	System.out.println(a); 	
+	int year,age;
+	if(a[7]=='1' || a[7] == '2'){
+	  year =1900+((a[0]-48)*10+(a[1]-48));
+	}else{
+	  year =2000+((a[0]-48)*10+(a[1]-48));
+	}
+
+	age=2020-(year+1);
+	System.out.println("당신은"+age+"세 입니다."); 
+	*/
+
+	/*
+	String msg="123456-1234567";
+	char[] arr=msg.toChartArray();
+	char[] temp=new char[2];
+	temp[0]=arr[0];
+	temp[1]=arr[1];
+	String temp2=new String(temp);
+	int year=Integer.parseInt(temp2);
+	char gender='남';
+	if(a[7]=='1'){
+	  year+=1900;
+          gender='남';
+	}else if(a[7]=='2'){
+	  year+=1900;
+          gender='여';
+	}else if(a[7]=='3'){
+	  year+=2000;
+          gender='남';
+	}else if(a[7]=='4'){
+	  year+=2000;
+          gender='여';
+	}
+	int age=2020-year+1;
+	age=2020-(year+1);
+	System.out.println("당신은"+age+"세 입니다."+gender+"성입니다"); 
+	*/
+
+
+
+	String msg="200101-3123456";	
+	char[] arr=msg.toCharArray();
+	gender='남';
+	
+	int year=1900;
+	year+=(arr[0]-'0')*10+(arr[1]-'0')*1;//'2'-'0'
+	if(arr[7]>'2'){year+=100;}
+	if((arr[7]-'0')%2==0){gender='여';}
+	System.out.println(2020-year+"세"+gender+"성"); 
+}	
+}
