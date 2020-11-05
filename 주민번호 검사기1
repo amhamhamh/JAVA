@@ -1,0 +1,39 @@
+class Ex31{
+
+
+public static void main(String[] args){
+
+	/*
+	String star="★★★";
+	for(int i=0; i<=4; i++){
+	 System.out.println(star);
+	}
+	System.out.println("\n-----------------------------------------\n");
+	}	
+	*/
+	
+
+
+	 for(i
+	 System.out.print(i+"\t");
+	 System.out.print((i+1)+"\t");
+	 System.out.print((i+2)+"\t"+"\n");
+	 
+	 System.out.print(i+3+"\t");
+	 System.out.print((i+3+1)+"\t");
+	 System.out.print((i+3+2)+"\t"+"\n");
+
+         System.out.print(i+3+3+"\t");
+	 System.out.print((i+3+3+1)+"\t");
+	 System.out.print((i+3+3+2)+"\t"+"\n");
+	
+	
+
+
+
+
+}
+
+
+
+}
