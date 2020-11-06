@@ -1,0 +1,97 @@
+class Ex31{
+
+
+public static void main(String[] args){
+
+	/*
+	String star="★★★";
+	for(int i=0; i<=4; i++){
+	 System.out.println(star);
+	}
+	System.out.println("\n-----------------------------------------\n");
+	}	
+	*/
+	
+
+	 /*
+	 for(i
+	 System.out.print(i+"\t");
+	 System.out.print((i+1)+"\t");
+	 System.out.print((i+2)+"\t"+"\n");
+	 
+	 System.out.print(i+3+"\t");
+	 System.out.print((i+3+1)+"\t");
+	 System.out.print((i+3+2)+"\t"+"\n");
+
+         System.out.print(i+3+3+"\t");
+	 System.out.print((i+3+3+1)+"\t");
+	 System.out.print((i+3+3+2)+"\t"+"\n");
+         */
+
+	/*
+	 for(int i=0; i<=3; i++){
+		for(int j=0; j<3; j++){
+		 System.out.print((j+1)+3*i+"");
+		}
+		System.out.println();
+	}	
+
+
+	for(int i=1; i<10; i++){
+		if(i%3!==0);{
+			System.our.println(i);
+		}else{
+			System.our.println('');	
+		}
+	}
+	*/
+	
+	/*
+	int newLine=3;
+	for(int i=0; i<6; i++){
+		System.our.println(i);		
+		if(i==3){
+  			System.our.println(i);		
+			newLine++
+			i-=3;
+		}else{
+ 			System.our.println(i);		
+		}
+	}
+
+
+	System.out.println();
+	int su=1;
+	int su2=2;
+	for(int i=0;i<3; i++){
+		for(int j=0; j<3; j++){
+			System.out.println(su++);
+		}
+		System.out.println();	
+		su=su2++;
+ 	}
+
+	System.out.println();		
+	*/
+
+	for(int i=0; i<4; i++){
+	  for(int j=0; j<i+1; j++){
+			System.out.println('★');
+		}	
+	}
+
+	int sum5=0;
+	int su5=2;
+	for(int i=0; i<10; i++){
+	   System.out.print(i+1);
+	   if(i==sum5){
+		System.out.println();
+		sum5+=su5;
+		su5++;
+		}		
+	}
+
+
+
+}
+}
